@@ -1,0 +1,238 @@
+version: '3'
+services:
+    #BROKER
+    zookeeper:
+        image: wurstmeister/zookeeper:latest
+        container_name: zookeeper
+        ports:
+        - 2181:2181
+        networks:
+        - reach
+    kafka:
+        image: wurstmeister/kafka:latest
+        container_name: kafka
+        environment:
+            KAFKA_ADVERTISED_HOST_NAME: 192.168.0.132
+            KAFKA_ADVERTISED_PORT: 8092
+            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+            KAFKA_CREATE_TOPICS: "topic:2:1,topicrss:2:1,topicjson:2:1,topiccyber:2:1"
+        ports:
+        - 8092:9092
+        networks:
+        - reach
+    #REACH
+    housthon:
+        image: reachhubcorp/housthon:latest
+        container_name: housthon
+        ports:
+        - 9701:9701
+        networks:
+        - reach
+        networks:
+        - reach
+    logstash:
+        build:
+            context: ./elk/logstash/
+            args:
+                ELK_VERSION: 6.4.2
+        volumes:
+        - ./elk/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+        - ./elk/logstash/pipeline:/usr/share/logstash/pipeline:ro
+        - ./elk/logstash/in:/usr/share/logstash/in
+        ports:
+        - "5000:5000"
+        - "9600:9600"
+        environment:
+            LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+        networks:
+        - reach
+        depends_on:
+        - elasticsearch
+    kibana:
+        container_name: kibana
+        build:
+            context: ./elk/kibana/
+            args:
+                ELK_VERSION: 6.4.2
+        volumes:
+        - ./elk/kibana/config/:/usr/share/kibana/config:ro
+        ports:
+        - "5601:5601"
+        networks:
+        - reach
+        depends_on:
+        - elasticsearch
+    #NIFI
+    nifi:
+        image: apache/nifi:latest
+        ports:
+        - "8090:8080"
+        volumes:
+        - ./feeder/templates/:/opt/nifi/nifi-current/conf/templates/
+        networks:
+        - reach
+    #GRAPH DB
+    cassandra:
+        container_name: cassandra
+        image: cassandra:latest
+        #command: /bin /bash -c "sleep 1 && echo ' -- Pausing to let system catch up ... -->' && /docker-entrypoint.sh cassandra -f"
+        #environment :
+        # - "HEAP_NEWSIZE:4096M"
+        # - "MAX_HEAP_SIZE:4096M"
+        environment:
+            JAVA_OPTS: -Xms256m -Xmx2048m
+        expose:
+        - 7000
+        - 7001
+        - 7199
+        - 9042
+        - 9160
+        volumes:
+        - ./graph/cassandra/data:/var/lib/cassandra
+        - ./graph/cassandra/cassandra.yaml:/etc/cassandra/cassandra.yaml
+        command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 0; fi && /docker-entrypoint.sh cassandra -f'
+        # Cassandra ulimt recommended settings
+        ulimits:
+            memlock: -1
+            nproc: 32768
+            nofile: 100000
+        networks:
+        - reach
+    janusgraph:
+        image: janusgraph:0.2.2-hadoop2
+        build:
+            dockerfile: Dockerfile
+            args:
+                version: 0.2.2
+                hadoop: hadoop2
+            context: graph/janus
+        container_name: janusgraph
+        #command: ["tail", "-f", "/dev/null"]
+        ports:
+        - "8182:8182"
+        - "9160:9160"
+        - "9042:9042"
+        expose:
+        - 9042
+        - 9160
+        command: bash -c '/app/init.sh && ./bin/gremlin-server.sh ./conf/gremlin-server/gremlin-server-configuration.yaml'
+        volumes:
+        - ./graph/janus/init.sh:/app/init.sh
+        - ./graph/janus/conf/gremlin-server/gremlin-server-configuration.yaml:/app/janusgraph-0.2.2-hadoop2/conf/gremlin-server/gremlin-server-configuration.yaml
+        - ./graph/janus/conf/gremlin-server/scripts/startup.groovy:/app/janusgraph-0.2.2-hadoop2/scripts/startup.groovy
+        - ./graph/janus/conf/janusgraph.properties:/app/janusgraph-0.2.2-hadoop2/conf/janusgraph.properties
+        networks:
+        - reach
+    #APPs
+    #NER
+    wrapper:
+        image: cwolff/opener-docker-wrapper
+        build:
+            context: ./ner/wrapper
+        environment:
+            SANIC_OPENER_IDENTIFY_LANGUAGE_URL: http://language_identifier
+            SANIC_OPENER_TOKENIZE_URL: http://tokenizer
+            SANIC_OPENER_POS_URL: http://pos_tagger
+            SANIC_OPENER_NER_URL: http://ner
+            SANIC_OPENER_KAF2JSON_URL: http://kaf2json
+        ports:
+        - 9999:80
+        depends_on:
+        - language_identifier
+        - tokenizer
+        - pos_tagger
+        - ner
+        - kaf2json
+        networks:
+        - reach
+
+    language_identifier:
+        image: cwolff/opener-docker-language-identifier
+        networks:
+        - reach
+
+    tokenizer:
+        image: cwolff/opener-docker-tokenizer
+        networks:
+        - reach
+
+    pos_tagger:
+        image: cwolff/opener-docker-pos-tagger
+        networks:
+        - reach
+
+    ner:
+        image: cwolff/opener-docker-ner
+        networks:
+        - reach
+
+    kaf2json:
+        image: cwolff/opener-docker-kaf2json
+        networks:
+        - reach
+    #yummy
+    yummy:
+        image: peploleum/yummy:latest
+        environment:
+            SPRING_MAIN_WEB_APPLICATION_TYPE: none
+            SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka:9092
+            SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES: kafka
+            SPRING_CLOUD_STREAM_BINDINGS_INPUT_BINDER: kafka
+            SPRING_CLOUD_STREAM_BINDINGS_INPUT_DESTINATION: topicrss
+            SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_BINDER: kafka
+            SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_DESTINATION: topicrss
+            FORMAT: dd/MM/YYYY hh:mm:ss
+            FIXED_DELAY: 3000
+            URLNER: http://wrapper:80/opener
+            URLINSIGHT: http://insight-app:8080/api/
+            NER: 'true'
+            MOCK: 'false'
+            JAVA_OPTS:  -Xmx2048m -Xms256m
+            GRAPH_ENABLED: 'true'
+            GRAPH_HOST: http://insight:8080/api/
+            ELASTICSEARCH_ENABLED: 'true'
+            ELASTICSEARCH_INDEX_NAME: gazetter
+            ELASTICSEARCH_HOST: elasticsearch
+            ELASTICSEARCH_PORT: 9200
+            ELASTICSEARCH_NODE_PORT: 9300
+            ELASTICSEARCH_CLUSTERNAME: insight
+        networks:
+        - reach
+        depends_on:
+        - insight-app
+    #insight
+    insight-mongodb:
+        image: mongo:4.0.2
+        volumes:
+        - ./mongodb/data:/data/db/
+        ports:
+        - "27017:27017"
+        networks:
+        - insight
+    insight-app:
+        image: peploleum/insight:latest
+        environment:
+        - _JAVA_OPTIONS=-Xmx512m -Xms256m
+        - SPRING_PROFILES_ACTIVE=prod,swagger,graphy,reach
+        - SPRING_DATA_MONGODB_URI=mongodb://insight-mongodb:27017
+        - SPRING_DATA_MONGODB_DATABASE=insight
+        - JHIPSTER_SLEEP=30 # gives time for the database to boot before the application
+        - SPRING_DATA_JEST_URI=http://elasticsearch:9200
+        - APPLICATION_KIBANA_URI=http://kibana:5601
+        - SPRING_DATA_GREMLIN_ENDPOINT=janusgraph
+        - SPRING_DATA_GREMLIN_PORT=8182
+        - SPRING_DATA_GREMLIN_SSL_ENABLED=false
+        - SPRING_DATA_GREMLIN_TELEMETRY_ALLOWED=false
+        - SPRING_DATA_GREMLIN_USERNAME=capgemini
+        - SPRING_DATA_GREMLIN_PASSWORD=root
+        ports:
+        - 8080:8080
+        networks:
+        - insight
+        depends_on:
+        - elasticsearch
+        - kibana
+        - insight-mongodb
+networks:
+    reach:
+        driver: bridge
