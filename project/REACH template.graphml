@@ -105,12 +105,12 @@
 			<data key="d3">
 				<x:List>
 					<y:Label LayoutParameter="{x:Static y:InteriorLabelModel.Center}" Style="{y:GraphMLReference 1}">
-						<y:Label.Text>INSIGHT</y:Label.Text>
+						<y:Label.Text>COLISSITHON</y:Label.Text>
 					</y:Label>
 				</x:List>
 			</data>
 			<data key="d4">
-				<y:RectD X="1376.3625539469122" Y="-210" Width="80" Height="50"/>
+				<y:RectD X="1376.3625539469122" Y="-210" Width="94" Height="50"/>
 			</data>
 			<data key="d6">
 				<bpmn:ActivityNodeStyle activityType="TRANSACTION" minimumSize="40,40"/>
@@ -499,7 +499,7 @@
 		</node>
 		<node id="n14">
 			<data key="d4">
-				<y:RectD X="419.534271247462" Y="-395" Width="50" Height="30"/>
+				<y:RectD X="1238.07828269945" Y="-395" Width="50" Height="30"/>
 			</data>
 			<data key="d6">
 				<demostyle:FlowchartNodeStyle type="directData" fill="{y:GraphMLReference 2}"/>
@@ -589,7 +589,7 @@
 		</node>
 		<node id="n19">
 			<data key="d4">
-				<y:RectD X="1006.07828269945" Y="-150" Width="50" Height="30"/>
+				<y:RectD X="1238.07828269945" Y="-150" Width="50" Height="30"/>
 			</data>
 			<data key="d6">
 				<demostyle:FlowchartNodeStyle type="directData" fill="{y:GraphMLReference 2}"/>
@@ -969,7 +969,7 @@
 					<y:Label Style="{y:GraphMLReference 5}">
 						<y:Label.Text><![CDATA[gg img]]></y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.5589646327774731" Distance="-28.23877448736084" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 6}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.9726242884574777" Distance="3.1406323279020367" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 6}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1077,7 +1077,7 @@
 					<y:Label Style="{y:GraphMLReference 5}">
 						<y:Label.Text>bio</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.5583864389049884" Distance="11.999999999999678" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 6}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.49554021473937837" Distance="-5.199966338142161" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 6}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1105,7 +1105,7 @@
 					<y:Label Style="{y:GraphMLReference 5}">
 						<y:Label.Text>orga</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.5956946721554214" Distance="5.07879915588829" Model="{y:GraphMLReference 6}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.7295654336816196" Distance="-9.402917421237136" Model="{y:GraphMLReference 6}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1199,10 +1199,7 @@
 		<edge id="e25" source="n19" target="n1" sourceport="p1" targetport="p5">
 			<data key="d11">
 				<x:List>
-					<y:Bend Location="1071.07828269945,-135"/>
-					<y:Bend Location="1076.07828269945,-130"/>
-					<y:Bend Location="1303.07828269945,-130"/>
-					<y:Bend Location="1317.2204183231809,-144.14213562373084"/>
+					<y:Bend Location="1317.2204183231809,-135"/>
 					<y:Bend Location="1317.2204183231809,-163.00072151912624"/>
 					<y:Bend Location="1332.0768396611975,-177.85714285714286"/>
 				</x:List>
@@ -1269,6 +1266,20 @@
 			</data>
 		</edge>
 		<edge id="e30" source="n21" target="n22" sourceport="p1" targetport="p0">
+			<data key="d10">
+				<x:List>
+					<y:Label Style="{y:GraphMLReference 5}">
+						<y:Label.Text>media++</y:Label.Text>
+						<y:Label.LayoutParameter>
+							<y:SmartEdgeLabelModelParameter Distance="5">
+								<y:SmartEdgeLabelModelParameter.Model>
+									<y:SmartEdgeLabelModel/>
+								</y:SmartEdgeLabelModelParameter.Model>
+							</y:SmartEdgeLabelModelParameter>
+						</y:Label.LayoutParameter>
+					</y:Label>
+				</x:List>
+			</data>
 			<data key="d12">
 				<y:GraphMLReference ResourceKey="15"/>
 			</data>
