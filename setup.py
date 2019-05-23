@@ -23,3 +23,5 @@ dl_module_from_github("scrapython","https://github.com/reachcorp/scrapython.git"
 dl_module_from_github("twitthon","https://github.com/reachcorp/twitthon.git")
 dl_module_from_github("NERdetecthon","https://github.com/reachcorp/NERdetecthon.git")
 dl_module_from_github("colissithon","https://github.com/reachcorp/colissithon.git")
+dl_module_from_github("googlethon","https://github.com/reachcorp/googlethon.git")
+dl_module_from_github("geotrouvethon","https://github.com/reachcorp/geotrouvethon.git")
