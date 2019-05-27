@@ -8,7 +8,7 @@ services:
         - 2181:2181
         networks:
         - reach
-    kafka:docker 
+    kafka: 
         image: wurstmeister/kafka:latest
         container_name: kafka
         environment:
