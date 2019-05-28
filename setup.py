@@ -25,3 +25,4 @@ dl_module_from_github("NERdetecthon","https://github.com/reachcorp/NERdetecthon.
 dl_module_from_github("colissithon","https://github.com/reachcorp/colissithon.git")
 dl_module_from_github("googlethon","https://github.com/reachcorp/googlethon.git")
 dl_module_from_github("geotrouvethon","https://github.com/reachcorp/geotrouvethon.git")
+dl_module_from_github("travelthon","https://github.com/reachcorp/travelthon.git")
