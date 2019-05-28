@@ -36,45 +36,47 @@
 			<yjs:SolidColorFill x:Key="2" color="White"/>
 			<yjs:Font x:Key="3" fontSize="12" fontFamily="'Arial'"/>
 			<y:ExteriorLabelModel x:Key="4" Insets="5"/>
-			<yjs:DefaultLabelStyle x:Key="5" verticalTextAlignment="BOTTOM" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 3}" textFill="BLACK"/>
-			<y:SmartEdgeLabelModel x:Key="6"/>
-			<yjs:SolidColorFill x:Key="7" color="#FFFF0303"/>
-			<yjs:DashStyle x:Key="8" dashes="2 2 0 2 0 2" offset="1"/>
-			<yjs:Arrow x:Key="9" type="TRIANGLE" scale="0.75" stroke="#FFFF0303" fill="#FFFF0303" cropLength="1"/>
-			<yjs:Arrow x:Key="10" scale="0.75" stroke="#FFFF0303" fill="#FFFF0303" cropLength="1"/>
-			<y:FreeEdgeLabelModel x:Key="11"/>
-			<yjs:Stroke x:Key="12" fill="#FF309C2B"/>
-			<yjs:Arrow x:Key="13" type="TRIANGLE" scale="0.75" stroke="#FF309C2B" fill="#FF309C2B" cropLength="1"/>
-			<yjs:Arrow x:Key="14" type="NONE" stroke="#FF309C2B" fill="#FF309C2B"/>
-			<yjs:Stroke x:Key="15" fill="#FF336699"/>
-			<yjs:PolylineEdgeStyle x:Key="16" stroke="{y:GraphMLReference 15}">
+			<yjs:SolidColorFill x:Key="5" color="#FF392AEC"/>
+			<yjs:Font x:Key="6" fontSize="9" fontFamily="'Arial'"/>
+			<yjs:DefaultLabelStyle x:Key="7" verticalTextAlignment="BOTTOM" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 3}" textFill="BLACK"/>
+			<y:SmartEdgeLabelModel x:Key="8"/>
+			<yjs:SolidColorFill x:Key="9" color="#FFFF0303"/>
+			<yjs:DashStyle x:Key="10" dashes="2 2 0 2 0 2" offset="1"/>
+			<yjs:Arrow x:Key="11" type="TRIANGLE" scale="0.75" stroke="#FFFF0303" fill="#FFFF0303" cropLength="1"/>
+			<yjs:Arrow x:Key="12" scale="0.75" stroke="#FFFF0303" fill="#FFFF0303" cropLength="1"/>
+			<y:FreeEdgeLabelModel x:Key="13"/>
+			<yjs:Stroke x:Key="14" fill="#FF309C2B"/>
+			<yjs:Arrow x:Key="15" type="TRIANGLE" scale="0.75" stroke="#FF309C2B" fill="#FF309C2B" cropLength="1"/>
+			<yjs:Arrow x:Key="16" type="NONE" stroke="#FF309C2B" fill="#FF309C2B"/>
+			<yjs:Stroke x:Key="17" fill="#FF336699"/>
+			<yjs:PolylineEdgeStyle x:Key="18" stroke="{y:GraphMLReference 17}">
 				<yjs:PolylineEdgeStyle.targetArrow>
-					<yjs:Arrow type="TRIANGLE" scale="0.75" stroke="{y:GraphMLReference 15}" fill="#FF336699" cropLength="1"/>
+					<yjs:Arrow type="TRIANGLE" scale="0.75" stroke="{y:GraphMLReference 17}" fill="#FF336699" cropLength="1"/>
 				</yjs:PolylineEdgeStyle.targetArrow>
 			</yjs:PolylineEdgeStyle>
-			<y:SmartEdgeLabelModel x:Key="17" Angle="1.5707963267948966"/>
-			<yjs:Stroke x:Key="18" fill="#FF0DD6CA"/>
-			<yjs:Arrow x:Key="19" type="TRIANGLE" scale="0.75" stroke="#FF0DD6CA" fill="#FF0DD6CA" cropLength="1"/>
-			<yjs:Arrow x:Key="20" type="NONE" stroke="#FF0DD6CA" fill="#FF0DD6CA"/>
-			<yjs:DefaultLabelStyle x:Key="21" verticalTextAlignment="BOTTOM" horizontalTextAlignment="CENTER" textFill="BLACK">
+			<y:SmartEdgeLabelModel x:Key="19" Angle="1.5707963267948966"/>
+			<yjs:Stroke x:Key="20" fill="#FF0DD6CA"/>
+			<yjs:Arrow x:Key="21" type="TRIANGLE" scale="0.75" stroke="#FF0DD6CA" fill="#FF0DD6CA" cropLength="1"/>
+			<yjs:Arrow x:Key="22" type="NONE" stroke="#FF0DD6CA" fill="#FF0DD6CA"/>
+			<yjs:DefaultLabelStyle x:Key="23" verticalTextAlignment="BOTTOM" horizontalTextAlignment="CENTER" textFill="BLACK">
 				<yjs:DefaultLabelStyle.font>
 					<yjs:Font fontSize="12" fontFamily="'Arial'"/>
 				</yjs:DefaultLabelStyle.font>
 			</yjs:DefaultLabelStyle>
-			<y:SmartEdgeLabelModel x:Key="22"/>
-			<yjs:Stroke x:Key="23" fill="#FFCF0AEF"/>
-			<yjs:Arrow x:Key="24" type="TRIANGLE" scale="0.75" stroke="#FFCF0AEF" fill="#FFCF0AEF" cropLength="1"/>
-			<yjs:Arrow x:Key="25" type="NONE" stroke="#FFCF0AEF" fill="#FFCF0AEF"/>
-			<yjs:PolylineEdgeStyle x:Key="26" stroke="{y:GraphMLReference 23}" targetArrow="{y:GraphMLReference 24}" sourceArrow="{y:GraphMLReference 25}"/>
-			<yjs:Stroke x:Key="27" fill="{y:GraphMLReference 7}" lineCap="SQUARE" dashStyle="{y:GraphMLReference 8}"/>
-			<yjs:Stroke x:Key="28" fill="#FFFDD835"/>
-			<yjs:Arrow x:Key="29" type="TRIANGLE" scale="0.75" stroke="#FFFDD835" fill="#FFFDD835" cropLength="1"/>
-			<yjs:Arrow x:Key="30" type="NONE" stroke="#FFFDD835" fill="#FFFDD835"/>
+			<y:SmartEdgeLabelModel x:Key="24"/>
+			<yjs:Stroke x:Key="25" fill="#FFCF0AEF"/>
+			<yjs:Arrow x:Key="26" type="TRIANGLE" scale="0.75" stroke="#FFCF0AEF" fill="#FFCF0AEF" cropLength="1"/>
+			<yjs:Arrow x:Key="27" type="NONE" stroke="#FFCF0AEF" fill="#FFCF0AEF"/>
+			<yjs:PolylineEdgeStyle x:Key="28" stroke="{y:GraphMLReference 25}" targetArrow="{y:GraphMLReference 26}" sourceArrow="{y:GraphMLReference 27}"/>
+			<yjs:Stroke x:Key="29" fill="{y:GraphMLReference 9}" lineCap="SQUARE" dashStyle="{y:GraphMLReference 10}"/>
+			<yjs:Stroke x:Key="30" fill="#FFFDD835"/>
+			<yjs:Arrow x:Key="31" type="TRIANGLE" scale="0.75" stroke="#FFFDD835" fill="#FFFDD835" cropLength="1"/>
+			<yjs:Arrow x:Key="32" type="NONE" stroke="#FFFDD835" fill="#FFFDD835"/>
 		</y:SharedData>
 	</data>
 	<graph id="G" edgedefault="directed">
 		<data key="d5">
-			<y:Json>{"version":"2.0.0","layout":"layout-hierarchic","config":{"noObf_useDrawingAsSketch":false,"noObf_selectedElementsIncrementally":false,"noObf_nodeToNodeDistance":40,"noObf_automaticEdgeGroupingEnabled":false,"noObf_considerNodeLabels":true,"noObf_edgeLabeling":0,"noObf_orientation":1,"noObf_edgeRouting":1},"theme":{"name":"light","version":"1.0.0"}}</y:Json>
+			<y:Json>{"theme":{"name":"light","version":"1.0.0"}}</y:Json>
 		</data>
 		<node id="n0">
 			<data key="d3">
@@ -196,11 +198,6 @@
 				</data>
 			</port>
 			<port name="p2">
-				<data key="d15">
-					<y:FreeNodePortLocationModelParameter Ratio="0,0.1666666666666663"/>
-				</data>
-			</port>
-			<port name="p3">
 				<data key="d15">
 					<y:FreeNodePortLocationModelParameter Ratio="1,0.5"/>
 				</data>
@@ -330,11 +327,16 @@
 					<y:FreeNodePortLocationModelParameter Ratio="1,0.75"/>
 				</data>
 			</port>
+			<port name="p3">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.019230709070330698,0.5"/>
+				</data>
+			</port>
 		</node>
 		<node id="n8">
 			<data key="d3">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>94A</y:Label.Text>
 						<y:Label.LayoutParameter>
 							<y:CompositeLabelModelParameter>
@@ -750,13 +752,279 @@
 				</data>
 			</port>
 		</node>
+		<node id="n25">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>housToCompara</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="211.9092712474619" Y="-404.375" Width="72.75" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n25:" edgedefault="directed"/>
+		</node>
+		<node id="n26">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>housToGoogle</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="214.3467712474619" Y="-279.58333333333326" Width="67.875" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n26:" edgedefault="directed"/>
+		</node>
+		<node id="n27">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>housToTwit</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="220.0342712474619" Y="-209.58333333333337" Width="56.5" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n27:" edgedefault="directed"/>
+		</node>
+		<node id="n28">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>urlToScrapy</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="438.1592712474619" Y="-353.75" Width="56.5" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n28:" edgedefault="directed"/>
+		</node>
+		<node id="n29">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>googleToTwit</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="792.2768758282571" Y="-296.25" Width="56.5" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n29:" edgedefault="directed"/>
+		</node>
+		<node id="n30">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>housToTravel</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1053.845418323181" Y="-510" Width="56.5" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n30:" edgedefault="directed"/>
+		</node>
+		<node id="n31">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>textToNER</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1053.845418323181" Y="-246.25" Width="56.5" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n31:" edgedefault="directed"/>
+		</node>
+		<node id="n32">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>tweetToCrousti</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1048.782918323181" Y="-112.25" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n32:" edgedefault="directed"/>
+		</node>
+		<node id="n33">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>tweetToColissi</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1048.782918323181" Y="-45" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n33:" edgedefault="directed"/>
+		</node>
+		<node id="n34">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>mediaToColissi</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1342.9935964418355" Y="-100" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n34:" edgedefault="directed"/>
+		</node>
+		<node id="n35">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>mediaToColissi</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1342.9935964418355" Y="-170" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n35:" edgedefault="directed"/>
+		</node>
+		<node id="n36">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>ggimgToColissi</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1342.9935964418355" Y="-455" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n36:" edgedefault="directed"/>
+		</node>
+		<node id="n37">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>bioToColissi</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1342.9935964418355" Y="-240" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n37:" edgedefault="directed"/>
+		</node>
+		<node id="n38">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text>locToColissi</y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" font="{y:GraphMLReference 6}" textFill="{y:GraphMLReference 5}" textSize="9"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="1342.9935964418355" Y="-310" Width="66.625" Height="12.25"/>
+			</data>
+			<data key="d6">
+				<bpmn:GroupNodeStyle/>
+			</data>
+			<graph id="n38:" edgedefault="directed"/>
+		</node>
 		<edge id="e0" source="n0" target="n3" sourceport="p0" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>n/p</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 17}" SegmentIndex="2" SegmentRatio="0.5000000000000003" Distance="-0.0010000000000331966"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 19}" SegmentIndex="2" SegmentRatio="0.5000000000000003" Distance="-0.0010000000000331966"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -782,7 +1050,7 @@
 		</edge>
 		<edge id="e1" source="n3" target="n2" sourceport="p1" targetport="p0">
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 23}" targetArrow="{y:GraphMLReference 24}" sourceArrow="{y:GraphMLReference 25}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 25}" targetArrow="{y:GraphMLReference 26}" sourceArrow="{y:GraphMLReference 27}"/>
 			</data>
 		</edge>
 		<edge id="e2" source="n0" target="n1" sourceport="p1" targetport="p0">
@@ -791,7 +1059,7 @@
 					<y:Label>
 						<y:Label.Text>create_bio</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 6}" SegmentIndex="4" SegmentRatio="0.5578595170533568" Distance="-0.001"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 8}" SegmentIndex="4" SegmentRatio="0.5578595170533568" Distance="-0.001"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
 							<yjs:DefaultLabelStyle verticalTextAlignment="BOTTOM" horizontalTextAlignment="CENTER" wrapping="WORD" font="{y:GraphMLReference 3}" textFill="#FF000000"/>
@@ -812,9 +1080,9 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle targetArrow="{y:GraphMLReference 9}" sourceArrow="{y:GraphMLReference 10}">
+				<yjs:PolylineEdgeStyle targetArrow="{y:GraphMLReference 11}" sourceArrow="{y:GraphMLReference 12}">
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke fill="{y:GraphMLReference 7}" lineCap="SQUARE" dashStyle="{y:GraphMLReference 8}"/>
+						<yjs:Stroke fill="{y:GraphMLReference 9}" lineCap="SQUARE" dashStyle="{y:GraphMLReference 10}"/>
 					</yjs:PolylineEdgeStyle.stroke>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -822,10 +1090,10 @@
 		<edge id="e3" source="n0" target="n4" sourceport="p2" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>n/p/img</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 6}" SegmentRatio="1" Distance="-0.001"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 8}" SegmentRatio="1" Distance="-0.001"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -875,16 +1143,16 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 27}" targetArrow="{y:GraphMLReference 9}" sourceArrow="{y:GraphMLReference 10}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 29}" targetArrow="{y:GraphMLReference 11}" sourceArrow="{y:GraphMLReference 12}"/>
 			</data>
 		</edge>
 		<edge id="e7" source="n2" target="n7" sourceport="p1" targetport="p2">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>url</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.4073275613980672" Distance="-13.76052388918803" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.4073275613980672" Distance="-13.76052388918803" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -910,16 +1178,16 @@
 		</edge>
 		<edge id="e8" source="n7" target="n6" sourceport="p0" targetport="p0">
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 12}" targetArrow="{y:GraphMLReference 13}" sourceArrow="{y:GraphMLReference 14}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 14}" targetArrow="{y:GraphMLReference 15}" sourceArrow="{y:GraphMLReference 16}"/>
 			</data>
 		</edge>
-		<edge id="e9" source="n6" target="n2" sourceport="p1" targetport="p2">
+		<edge id="e9" source="n6" target="n7" sourceport="p1" targetport="p3">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>url</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.5264350602773494" Distance="-6.714762396929612" Angle="-3.141592653589793" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="-0.11962652874305015" Distance="-15.282308447462874" Angle="-3.141592653589793" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -927,20 +1195,24 @@
 			<data key="d11">
 				<x:List>
 					<y:Bend Location="644.6935424949238,-363.75"/>
-					<y:Bend Location="680.5268758282571,-327.9166666666667"/>
+					<y:Bend Location="644.6935424949238,-342.875"/>
+					<y:Bend Location="636,-332"/>
+					<y:Bend Location="437.75,-332"/>
+					<y:Bend Location="424.75,-342.875"/>
+					<y:Bend Location="424.75,-356.625"/>
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 12}" targetArrow="{y:GraphMLReference 13}" sourceArrow="{y:GraphMLReference 14}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 14}" targetArrow="{y:GraphMLReference 15}" sourceArrow="{y:GraphMLReference 16}"/>
 			</data>
 		</edge>
 		<edge id="e10" source="n6" target="n11" sourceport="p2" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 21}">
+					<y:Label Style="{y:GraphMLReference 23}">
 						<y:Label.Text>texte</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 6}" SegmentIndex="2" SegmentRatio="0.6040792551461365" Distance="0.001"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 8}" SegmentIndex="2" SegmentRatio="0.6040792551461365" Distance="0.001"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -956,21 +1228,21 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="16"/>
+				<y:GraphMLReference ResourceKey="18"/>
 			</data>
 		</edge>
 		<edge id="e11" source="n11" target="n9" sourceport="p1" targetport="p0">
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="16"/>
+				<y:GraphMLReference ResourceKey="18"/>
 			</data>
 		</edge>
 		<edge id="e12" source="n0" target="n12" sourceport="p4" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>n/p</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 17}" SegmentIndex="2" SegmentRatio="0.7657467125112523" Distance="-1.5010000000000332"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 19}" SegmentIndex="2" SegmentRatio="0.7657467125112523" Distance="-1.5010000000000332"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1009,25 +1281,25 @@
 		<edge id="e14" source="n13" target="n11" sourceport="p1" targetport="p2">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>tweet</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.5527802026502235" Distance="5.241863715323177" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.5527802026502235" Distance="5.241863715323177" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 18}" targetArrow="{y:GraphMLReference 19}" sourceArrow="{y:GraphMLReference 20}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 20}" targetArrow="{y:GraphMLReference 21}" sourceArrow="{y:GraphMLReference 22}"/>
 			</data>
 		</edge>
 		<edge id="e15" source="n5" target="n14" sourceport="p1" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text><![CDATA[gg img]]></y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.9612819701392322" Distance="5.529071253682974" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.9612819701392322" Distance="5.529071253682974" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1072,10 +1344,10 @@
 		<edge id="e17" source="n13" target="n15" sourceport="p2" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>media</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.6108138715810938" Distance="-7.731121460701926" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.6108138715810938" Distance="-7.731121460701926" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1102,10 +1374,10 @@
 		<edge id="e18" source="n9" target="n16" sourceport="p1" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>loc</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.6903012996251732" Distance="-5.86217340322539" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.6903012996251732" Distance="-5.86217340322539" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1117,16 +1389,16 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 28}" targetArrow="{y:GraphMLReference 29}" sourceArrow="{y:GraphMLReference 30}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 30}" targetArrow="{y:GraphMLReference 31}" sourceArrow="{y:GraphMLReference 32}"/>
 			</data>
 		</edge>
 		<edge id="e19" source="n9" target="n17" sourceport="p2" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>bio</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.49554021473937837" Distance="-5.19996633814219" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.49554021473937837" Distance="-5.19996633814219" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1145,10 +1417,10 @@
 		<edge id="e20" source="n9" target="n18" sourceport="p3" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>orga</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.7295654336816187" Distance="-9.402917421237206" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.7295654336816187" Distance="-9.402917421237206" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1227,10 +1499,10 @@
 		<edge id="e24" source="n13" target="n19" sourceport="p3" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>tweet</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.7284485362958468" Distance="18.95456299594843" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.7284485362958468" Distance="18.95456299594843" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1244,7 +1516,7 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 18}" targetArrow="{y:GraphMLReference 19}" sourceArrow="{y:GraphMLReference 20}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 20}" targetArrow="{y:GraphMLReference 21}" sourceArrow="{y:GraphMLReference 22}"/>
 			</data>
 		</edge>
 		<edge id="e25" source="n19" target="n1" sourceport="p1" targetport="p5">
@@ -1270,10 +1542,10 @@
 		<edge id="e26" source="n5" target="n7" sourceport="p2" targetport="p1">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 21}">
+					<y:Label Style="{y:GraphMLReference 23}">
 						<y:Label.Text>url</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 22}" SegmentIndex="1" Distance="-4.999999999999936"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 24}" SegmentIndex="1" Distance="-4.999999999999936"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1285,16 +1557,16 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="16"/>
+				<y:GraphMLReference ResourceKey="18"/>
 			</data>
 		</edge>
-		<edge id="e27" source="n2" target="n20" sourceport="p3" targetport="p0">
+		<edge id="e27" source="n2" target="n20" sourceport="p2" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text><![CDATA[tw acc]]></y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.42594562281050796" Distance="30.000000000000966" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.4259456228105023" Distance="38.37500000000182" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1332,16 +1604,16 @@
 		</edge>
 		<edge id="e29" source="n15" target="n21" sourceport="p1" targetport="p0">
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="16"/>
+				<y:GraphMLReference ResourceKey="18"/>
 			</data>
 		</edge>
 		<edge id="e30" source="n21" target="n22" sourceport="p1" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 5}">
+					<y:Label Style="{y:GraphMLReference 7}">
 						<y:Label.Text>media++</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:FreeEdgeLabelModelParameter Ratio="0.5274664210663882" Distance="14.239282893009898" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 11}"/>
+							<y:FreeEdgeLabelModelParameter Ratio="0.5274664210663882" Distance="14.239282893009898" Angle="2.4492935982947064e-16" Model="{y:GraphMLReference 13}"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1353,7 +1625,7 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="16"/>
+				<y:GraphMLReference ResourceKey="18"/>
 			</data>
 		</edge>
 		<edge id="e31" source="n22" target="n1" sourceport="p1" targetport="p6">
@@ -1366,16 +1638,16 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="16"/>
+				<y:GraphMLReference ResourceKey="18"/>
 			</data>
 		</edge>
 		<edge id="e32" source="n0" target="n23" sourceport="p5" targetport="p0">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 21}">
+					<y:Label Style="{y:GraphMLReference 23}">
 						<y:Label.Text>voyages</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 22}" Location="FromTarget" SegmentRatio="0.9715811372636999" Distance="5"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 24}" Location="FromTarget" SegmentRatio="0.9715811372636999" Distance="5"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1389,7 +1661,7 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="26"/>
+				<y:GraphMLReference ResourceKey="28"/>
 			</data>
 		</edge>
 		<edge id="e33" source="n23" target="n24" sourceport="p1" targetport="p0">
@@ -1402,31 +1674,31 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<y:GraphMLReference ResourceKey="26"/>
+				<y:GraphMLReference ResourceKey="28"/>
 			</data>
 		</edge>
 		<edge id="e34" source="n24" target="n10" sourceport="p1" targetport="p1">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 21}">
+					<y:Label Style="{y:GraphMLReference 23}">
 						<y:Label.Text>loc-&gt;coord</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 22}" Distance="5"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 24}" Distance="5"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 27}" targetArrow="{y:GraphMLReference 9}" sourceArrow="{y:GraphMLReference 10}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 29}" targetArrow="{y:GraphMLReference 11}" sourceArrow="{y:GraphMLReference 12}"/>
 			</data>
 		</edge>
 		<edge id="e35" source="n24" target="n16" sourceport="p2" targetport="p2">
 			<data key="d10">
 				<x:List>
-					<y:Label Style="{y:GraphMLReference 21}">
+					<y:Label Style="{y:GraphMLReference 23}">
 						<y:Label.Text>loc</y:Label.Text>
 						<y:Label.LayoutParameter>
-							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 22}" Location="FromTarget" SegmentRatio="0.2553557922502607" Distance="-5"/>
+							<y:SmartEdgeLabelModelParameter Model="{y:GraphMLReference 24}" Location="FromTarget" SegmentRatio="0.2553557922502607" Distance="-5"/>
 						</y:Label.LayoutParameter>
 					</y:Label>
 				</x:List>
@@ -1440,7 +1712,7 @@
 				</x:List>
 			</data>
 			<data key="d12">
-				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 28}" targetArrow="{y:GraphMLReference 29}" sourceArrow="{y:GraphMLReference 30}"/>
+				<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 30}" targetArrow="{y:GraphMLReference 31}" sourceArrow="{y:GraphMLReference 32}"/>
 			</data>
 		</edge>
 	</graph>
