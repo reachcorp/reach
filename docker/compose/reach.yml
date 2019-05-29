@@ -13,7 +13,7 @@ services:
             KAFKA_ADVERTISED_HOST_NAME: 192.168.0.30
             KAFKA_ADVERTISED_PORT: 8092
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-            KAFKA_CREATE_TOPICS: "googlethon_in:1:1,googlethon_out:1:1,travelthon_in:1:1,travelthon_out:1:1,comparathon_in:1:1,comparathon_out:1:1,tweethon_in:1:1,tweethon_out:1:1"
+            KAFKA_CREATE_TOPICS: "housToGoogle:1:1,housToTwit:1:1,housToTravel:1:1,housToCompara:1:1,urlToScrapy:1:1,googleToTwit:1:1,textToNER,tweetToColissi:1:1,tweetToCrousti:1:1,ggimgToColissi:1:1,locToColissi:1:1,bioToColissi:1:1,mediaToColissi:1:1"
         ports:
         - 8092:9092
     #HOUSTHON
@@ -26,10 +26,10 @@ services:
           HOUSTHON_PORT: 8097
           KAFKA_IP: 192.168.0.30
           KAFKA_PORT: 8092
-          TOPIC_GOOGLETHON : googlethon_in
-          TOPIC_TWITTHON: tweethon_in
-          TOPIC_TRAVELTHON: travelthon_in
-          TOPIC_COMPARATHON: comparathon_in
+          TOPIC_GOOGLETHON : housToGoogle
+          TOPIC_TWITTHON: housToTwit
+          TOPIC_TRAVELTHON: housToTravel
+          TOPIC_COMPARATHON: housToCompara
           PATH_TWEET: /app/samples/tweets
           PATH_PICTURES: /app/samples/pictures
         ports:
@@ -46,9 +46,9 @@ services:
             - KAFKA_IP=192.168.0.30
             - KAFKA_PORT=8092
             - COLISSITHON_PORT=9876
-            - FROM_TRAVELTHON=travelthon_out
-            - FROM_COMPARATHON=comparathon_out
-            - FROM_TWEETHON=tweethon_out
+            - FROM_TRAVELTHON=locToColissi
+            - FROM_COMPARATHON=ggimgToColissi
+            - FROM_TWEETHON=tweetToColissi
             - DEBUG_LEVEL=INFO
     #TRAVELTHON
     travelthon:
@@ -59,8 +59,8 @@ services:
           KAFKA_PORT: 8092
           GEOTROUVETHON_IP: 192.168.0.31
           GEOTROUVETHON_PORT: 9966
-          TOPIC_IN: travelthon_in
-          TOPIC_OUT: travelthon_out
+          TOPIC_IN: housToTravel
+          TOPIC_OUT: locToColissi
           DEBUG_LEVEL: INFO
 
 
