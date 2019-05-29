@@ -48,3 +48,6 @@ if len(repo_pull_failed) > 0:
     print("La mise a jour des modules suivants a echouee : ")
     for repo_name in repo_pull_failed:
         print(" - " + repo_name)
+else:
+    print("#############################################")
+    print("Mise a jour effectuee avec succes !")
