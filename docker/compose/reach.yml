@@ -6,8 +6,6 @@ services:
         container_name: zookeeper
         ports:
         - 2181:2181
-        networks:
-        - reach
     kafka: 
         image: wurstmeister/kafka:latest
         container_name: kafka
@@ -18,8 +16,6 @@ services:
             KAFKA_CREATE_TOPICS: "googlethon_in:1:1,googlethon_out:1:1,travelthon_in:1:1,travelthon_out:1:1,comparathon_in:1:1,comparathon_out:1:1,tweethon_in:1:1,tweethon_out:1:1"
         ports:
         - 8092:9092
-        networks:
-        - reach
     #HOUSTHON
     housthon:
         image: reachhubcorp/housthon:latest
@@ -38,9 +34,7 @@ services:
           PATH_PICTURES: /app/samples/pictures
         ports:
         - "8097:8097"
-        networks:
-        - reach
-    #REACH
+    #COLISSITHON
     colissithon:
         image: reachhubcorp/colissithon:latest
         container_name: colissithon
@@ -56,8 +50,18 @@ services:
             - FROM_COMPARATHON=comparathon_out
             - FROM_TWEETHON=tweethon_out
             - DEBUG_LEVEL=INFO
-        networks:
-        - reach
-networks:
-    reach:
-        driver: bridge
+    #TRAVELTHON
+    travelthon:
+    	image: reachhubcorp/travelthon:latest
+    	container_name: travelthon
+    	environment:
+          KAFKA_IP: 192.168.0.31
+          KAFKA_PORT: 8092
+          GEOTROUVETHON_IP: 192.168.0.31
+          GEOTROUVETHON_PORT: 9966
+          TOPIC_IN: travelthon_in
+          TOPIC_OUT: travelthon_out
+          DEBUG_LEVEL: INFO
+
+
+
