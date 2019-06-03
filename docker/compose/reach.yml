@@ -10,7 +10,7 @@ services:
         image: wurstmeister/kafka:latest
         container_name: kafka
         environment:
-            KAFKA_ADVERTISED_HOST_NAME: 192.168.0.30
+            KAFKA_ADVERTISED_HOST_NAME: kafka-ip
             KAFKA_ADVERTISED_PORT: 8092
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
             KAFKA_CREATE_TOPICS: "housToGoogle:1:1,housToTwit:1:1,housToTravel:1:1,housToCompara:1:1,urlToScrapy:1:1,googleToTwit:1:1,textToNER:1:1,tweetToColissi:1:1,tweetToCrousti:1:1,ggimgToColissi:1:1,locToColissi:1:1,bioToColissi:1:1,orgaToColissi:1:1,mediaToColissi:1:1"
@@ -21,10 +21,10 @@ services:
         image: reachhubcorp/housthon:latest
         container_name: housthon
         environment:
-          COLISSITHON_IP: 192.168.0.30
+          COLISSITHON_IP: colissithon-ip
           COLISSITHON_PORT: 9876
           HOUSTHON_PORT: 8097
-          KAFKA_IP: 192.168.0.30
+          KAFKA_IP: kafka-ip
           KAFKA_PORT: 8092
           TOPIC_GOOGLETHON : housToGoogle
           TOPIC_TWITTHON: housToTwit
@@ -41,9 +41,9 @@ services:
         ports:
             - "9876:9876"
         environment:
-            - INSIGHT_IP=192.168.0.30
+            - INSIGHT_IP=insight-ip
             - INSIGHT_PORT=8080
-            - KAFKA_IP=192.168.0.30
+            - KAFKA_IP=kafka-ip
             - KAFKA_PORT=8092
             - COLISSITHON_PORT=9876
             - FROM_TRAVELTHON=locToColissi
@@ -55,9 +55,9 @@ services:
     	image: reachhubcorp/travelthon:latest
     	container_name: travelthon
     	environment:
-          KAFKA_IP: 192.168.0.31
+          KAFKA_IP: kafka-ip
           KAFKA_PORT: 8092
-          GEOTROUVETHON_IP: 192.168.0.31
+          GEOTROUVETHON_IP: geotrouvethon-ip
           GEOTROUVETHON_PORT: 9966
           TOPIC_IN: housToTravel
           TOPIC_OUT: locToColissi
