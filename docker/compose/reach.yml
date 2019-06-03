@@ -62,6 +62,23 @@ services:
           TOPIC_IN: housToTravel
           TOPIC_OUT: locToColissi
           DEBUG_LEVEL: INFO
+    #TWITTHON
+    twitthon:
+    image: reachhubcorp/twitthon:latest
+    container_name: twitthon
+    environment:
+          KAFKA_IP: 192.168.0.31
+          KAFKA_PORT: 8092
+          TOPIC_IN: housToTwit
+          TOPICTWEET_OUT: tweetToColissi
+          TOPICTMEDIA_OUT: tweetToCrousti
+          TOPICTWEET_OUTDEUX: textToNER
+          OUTPUTTWEET_USER: /app/timeline/json
+          OUTPUTMEDIA_USER: /app/timeline/media
+          OUTPUTTWEET_KEYWORDS: /app/keywords/json
+          OUTPUTMEDIA_KEYWORDS: /app/keywords/media
+          LIMIT: 10
+          DEBUG_LEVEL: INFO
 
 
 
