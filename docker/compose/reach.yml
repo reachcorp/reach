@@ -150,3 +150,16 @@ services:
         - ELASTICSEARCH_PORT: 9200
         - ELASTICSEARCH_NODE_PORT: 9300
         - ELASTICSEARCH_CLUSTERNAME: insight
+    #COMPARATHON
+    comparathon:
+    image: reachhubcorp/twitthon:latest
+    container_name: comparathon
+    environment:
+          PICTURES_NUMBER_TO_DOWNLOAD: 25
+          DEBUG_LEVEL : INFO
+          TOLERANCE : 0.6
+          TOPIC_TO_FILL_PICTURES : ggimgToColissi
+          TOPIC_TO_CONSUME : housToCompara
+          TOPIC_TO_FILL_URLS : urlToScrapy
+          KAFKA_IP : 192.168.0.40
+          KAFKA_PORT : 8092
