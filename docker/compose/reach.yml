@@ -10,7 +10,7 @@ services:
         image: wurstmeister/kafka:latest
         container_name: kafka
         environment:
-            KAFKA_ADVERTISED_HOST_NAME: 192.168.0.31
+            KAFKA_ADVERTISED_HOST_NAME: "${kafka-ip}"
             KAFKA_ADVERTISED_PORT: 8092
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
             KAFKA_CREATE_TOPICS: "housToGoogle:1:1,housToTwit:1:1,housToTravel:1:1,housToCompara:1:1,urlToScrapy:1:1,googleToTwit:1:1,textToNER:1:1,tweetToColissi:1:1,tweetToCrousti:1:1,ggimgToColissi:1:1,locToColissi:1:1,bioToColissi:1:1,orgaToColissi:1:1,mediaToColissi:1:1"
@@ -21,10 +21,10 @@ services:
         image: reachhubcorp/housthon:latest
         container_name: housthon
         environment:
-          COLISSITHON_IP: 192.168.0.31
+          COLISSITHON_IP: "${colissithon-ip}"
           COLISSITHON_PORT: 9876
           HOUSTHON_PORT: 8097
-          KAFKA_IP: 192.168.0.31
+          KAFKA_IP: "${kafka-ip}"
           KAFKA_PORT: 8092
           TOPIC_GOOGLETHON : housToGoogle
           TOPIC_TWITTHON: housToTwit
@@ -39,35 +39,35 @@ services:
         image: reachhubcorp/colissithon:latest
         container_name: colissithon
         ports:
-            - "9876:9876"
+        - "9876:9876"
         environment:
-            - INSIGHT_IP=192.168.0.31
-            - INSIGHT_PORT=8080
-            - KAFKA_IP=192.168.0.31
-            - KAFKA_PORT=8092
-            - COLISSITHON_PORT=9876
-            - FROM_TRAVELTHON=locToColissi
-            - FROM_COMPARATHON=ggimgToColissi
-            - FROM_TWEETHON=tweetToColissi
-            - DEBUG_LEVEL=INFO
+          INSIGHT_IP: "${insight-ip}"
+          INSIGHT_PORT: 8080
+          KAFKA_IP: "${kafka-ip}"
+          KAFKA_PORT: 8092
+          COLISSITHON_PORT: 9876
+          FROM_TRAVELTHON: locToColissi
+          FROM_COMPARATHON: ggimgToColissi
+          FROM_TWEETHON: tweetToColissi
+          DEBUG_LEVEL: INFO
     #TRAVELTHON
     travelthon:
         image: reachhubcorp/travelthon:latest
         container_name: travelthon
         environment:
-          KAFKA_IP: 192.168.0.31
+          KAFKA_IP: "${kafka-ip}"
           KAFKA_PORT: 8092
-          GEOTROUVETHON_IP: 192.168.0.31
+          GEOTROUVETHON_IP: "${geotrouvethon-ip}"
           GEOTROUVETHON_PORT: 9966
           TOPIC_IN: housToTravel
           TOPIC_OUT: locToColissi
           DEBUG_LEVEL: INFO
     #TWITTHON
     twitthon:
-    image: reachhubcorp/twitthon:latest
-    container_name: twitthon
-    environment:
-          KAFKA_IP: 192.168.0.31
+        image: reachhubcorp/twitthon:latest
+        container_name: twitthon
+        environment:
+          KAFKA_IP: "${kafka-ip}"
           KAFKA_PORT: 8092
           TOPIC_IN: housToTwit
           TOPICTWEET_OUT: tweetToColissi
@@ -83,23 +83,19 @@ services:
     geotrouvethon:
         image: reachhubcorp/geotrouvethon:latest
         container_name: geotrouvethon
-        build:
-          context: ./context/
         ports:
         - "9966:9966"
         environment:
-        - GEOTROUVETHON_PORT=9966
-        - GEOTROUVETHON_URL=0.0.0.0
+          GEOTROUVETHON_PORT: 9966
+          GEOTROUVETHON_URL: 0.0.0.0
     wrapper:
         image: cwolff/opener-docker-wrapper
-        build:
-          context: ./wrapper
         environment:
-        - SANIC_OPENER_IDENTIFY_LANGUAGE_URL: http://language_identifier
-        - SANIC_OPENER_TOKENIZE_URL: http://tokenizer
-        - SANIC_OPENER_POS_URL: http://pos_tagger
-        - SANIC_OPENER_NER_URL: http://ner
-        - SANIC_OPENER_KAF2JSON_URL: http://kaf2json
+            SANIC_OPENER_IDENTIFY_LANGUAGE_URL: http://language_identifier
+            SANIC_OPENER_TOKENIZE_URL: http://tokenizer
+            SANIC_OPENER_POS_URL: http://pos_tagger
+            SANIC_OPENER_NER_URL: http://ner
+            SANIC_OPENER_KAF2JSON_URL: http://kaf2json
         ports:
         - 9999:80
         depends_on:
@@ -108,58 +104,52 @@ services:
         - pos_tagger
         - ner
         - kaf2json
-
-        language_identifier:
-            image: cwolff/opener-docker-language-identifier
-
-        tokenizer:
-            image: cwolff/opener-docker-tokenizer
-
-        pos_tagger:
-            image: cwolff/opener-docker-pos-tagger
-
-        ner:
-            image: cwolff/opener-docker-ner
-
-        kaf2json:
-            image: cwolff/opener-docker-kaf2json
-
+    language_identifier:
+        image: cwolff/opener-docker-language-identifier
+    tokenizer:
+        image: cwolff/opener-docker-tokenizer
+    pos_tagger:
+        image: cwolff/opener-docker-pos-tagger
+    ner:
+        image: cwolff/opener-docker-ner
+    kaf2json:
+        image: cwolff/opener-docker-kaf2json
     #NERDETECTHON
     nerdetecthon:
-        image: reachcorp/nerdetecthon:latest
+        image: reachhubcorp/nerdetecthon:latest
         environment:
-        - SPRING_MAIN_WEB_APPLICATION_TYPE: none
-        - SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka:9092
-        - SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES: kafka
-        - SPRING_CLOUD_STREAM_BINDINGS_INPUT_BINDER: kafka
-        - SPRING_CLOUD_STREAM_BINDINGS_INPUT_DESTINATION: topicrss
-        - SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_BINDER: kafka
-        - SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_DESTINATION: topicrss
-        - FORMAT: dd/MM/YYYY hh:mm:ss
-        - FIXED_DELAY: 3000
-        - URLNER: http://wrapper:80/opener
-        - URLINSIGHT: http://insight-app:8080/api/
-        - NER: 'true'
-        - MOCK: 'false'
-        - JAVA_OPTS:  -Xmx2048m -Xms256m
-        - GRAPH_ENABLED: 'true'
-        - GRAPH_HOST: http://insight:8080/api/
-        - ELASTICSEARCH_ENABLED: 'true'
-        - ELASTICSEARCH_INDEX_NAME: gazetter
-        - ELASTICSEARCH_HOST: elasticsearch
-        - ELASTICSEARCH_PORT: 9200
-        - ELASTICSEARCH_NODE_PORT: 9300
-        - ELASTICSEARCH_CLUSTERNAME: insight
+          SPRING_MAIN_WEB_APPLICATION_TYPE: none
+          SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka:9092
+          SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES: kafka
+          SPRING_CLOUD_STREAM_BINDINGS_INPUT_BINDER: kafka
+          SPRING_CLOUD_STREAM_BINDINGS_INPUT_DESTINATION: topicrss
+          SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_BINDER: kafka
+          SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_DESTINATION: topicrss
+          FORMAT: dd/MM/YYYY hh:mm:ss
+          FIXED_DELAY: 3000
+          URLNER: http://wrapper:80/opener
+          URLINSIGHT: http://insight-app:8080/api/
+          NER: 'true'
+          MOCK: 'false'
+          JAVA_OPTS:  -Xmx2048m -Xms256m
+          GRAPH_ENABLED: 'true'
+          GRAPH_HOST: http://insight:8080/api/
+          ELASTICSEARCH_ENABLED: 'true'
+          ELASTICSEARCH_INDEX_NAME: gazetter
+          ELASTICSEARCH_HOST: elasticsearch
+          ELASTICSEARCH_PORT: 9200
+          ELASTICSEARCH_NODE_PORT: 9300
+          ELASTICSEARCH_CLUSTERNAME: insight
     #COMPARATHON
     comparathon:
-    image: reachhubcorp/twitthon:latest
-    container_name: comparathon
-    environment:
+        image: reachhubcorp/twitthon:latest
+        container_name: comparathon
+        environment:
           PICTURES_NUMBER_TO_DOWNLOAD: 25
           DEBUG_LEVEL : INFO
           TOLERANCE : 0.6
           TOPIC_TO_FILL_PICTURES : ggimgToColissi
           TOPIC_TO_CONSUME : housToCompara
           TOPIC_TO_FILL_URLS : urlToScrapy
-          KAFKA_IP : 192.168.0.40
+          KAFKA_IP : "${kafka-ip}"
           KAFKA_PORT : 8092
