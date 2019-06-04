@@ -52,9 +52,9 @@ services:
             - DEBUG_LEVEL=INFO
     #TRAVELTHON
     travelthon:
-    	image: reachhubcorp/travelthon:latest
-    	container_name: travelthon
-    	environment:
+        image: reachhubcorp/travelthon:latest
+        container_name: travelthon
+        environment:
           KAFKA_IP: 192.168.0.31
           KAFKA_PORT: 8092
           GEOTROUVETHON_IP: 192.168.0.31
@@ -79,6 +79,74 @@ services:
           OUTPUTMEDIA_KEYWORDS: /app/keywords/media
           LIMIT: 10
           DEBUG_LEVEL: INFO
+    #GEOTROUVETHON
+    geotrouvethon:
+        image: reachhubcorp/geotrouvethon:latest
+        container_name: geotrouvethon
+        build:
+          context: ./context/
+        ports:
+        - "9966:9966"
+        environment:
+        - GEOTROUVETHON_PORT=9966
+        - GEOTROUVETHON_URL=0.0.0.0
+    wrapper:
+        image: cwolff/opener-docker-wrapper
+        build:
+          context: ./wrapper
+        environment:
+        - SANIC_OPENER_IDENTIFY_LANGUAGE_URL: http://language_identifier
+        - SANIC_OPENER_TOKENIZE_URL: http://tokenizer
+        - SANIC_OPENER_POS_URL: http://pos_tagger
+        - SANIC_OPENER_NER_URL: http://ner
+        - SANIC_OPENER_KAF2JSON_URL: http://kaf2json
+        ports:
+        - 9999:80
+        depends_on:
+        - language_identifier
+        - tokenizer
+        - pos_tagger
+        - ner
+        - kaf2json
 
+        language_identifier:
+            image: cwolff/opener-docker-language-identifier
 
+        tokenizer:
+            image: cwolff/opener-docker-tokenizer
 
+        pos_tagger:
+            image: cwolff/opener-docker-pos-tagger
+
+        ner:
+            image: cwolff/opener-docker-ner
+
+        kaf2json:
+            image: cwolff/opener-docker-kaf2json
+
+    #NERDETECTHON
+    nerdetecthon:
+        image: reachcorp/nerdetecthon:latest
+        environment:
+        - SPRING_MAIN_WEB_APPLICATION_TYPE: none
+        - SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka:9092
+        - SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES: kafka
+        - SPRING_CLOUD_STREAM_BINDINGS_INPUT_BINDER: kafka
+        - SPRING_CLOUD_STREAM_BINDINGS_INPUT_DESTINATION: topicrss
+        - SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_BINDER: kafka
+        - SPRING_CLOUD_STREAM_BINDINGS_OUTPUT_DESTINATION: topicrss
+        - FORMAT: dd/MM/YYYY hh:mm:ss
+        - FIXED_DELAY: 3000
+        - URLNER: http://wrapper:80/opener
+        - URLINSIGHT: http://insight-app:8080/api/
+        - NER: 'true'
+        - MOCK: 'false'
+        - JAVA_OPTS:  -Xmx2048m -Xms256m
+        - GRAPH_ENABLED: 'true'
+        - GRAPH_HOST: http://insight:8080/api/
+        - ELASTICSEARCH_ENABLED: 'true'
+        - ELASTICSEARCH_INDEX_NAME: gazetter
+        - ELASTICSEARCH_HOST: elasticsearch
+        - ELASTICSEARCH_PORT: 9200
+        - ELASTICSEARCH_NODE_PORT: 9300
+        - ELASTICSEARCH_CLUSTERNAME: insight
