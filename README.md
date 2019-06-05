@@ -7,7 +7,7 @@
 ## install/run/stop de Reach
 a. Modifier le fichier .env avec les @IP adéquates, et masquer les modifs de git:
       
-    git update-index --assume-unchanged .env
+    git update-index --assume-unchanged docker/compose/.env
 
 a. install/run/stop
 
