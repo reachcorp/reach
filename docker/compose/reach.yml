@@ -1,39 +1,23 @@
 version: '3'
 services:
-    #BROKER
-    zookeeper:
-        image: wurstmeister/zookeeper:latest
-        container_name: zookeeper
-        ports:
-        - 2181:2181
-    kafka: 
-        image: wurstmeister/kafka:latest
-        container_name: kafka
-        environment:
-            KAFKA_ADVERTISED_HOST_NAME: "${kafka-ip}"
-            KAFKA_ADVERTISED_PORT: 8092
-            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-            KAFKA_CREATE_TOPICS: "housToGoogle:1:1,housToTwit:1:1,housToTravel:1:1,housToCompara:1:1,urlToScrapy:1:1,googleToTwit:1:1,textToNER:1:1,tweetToColissi:1:1,tweetToCrousti:1:1,ggimgToColissi:1:1,locToColissi:1:1,bioToColissi:1:1,orgaToColissi:1:1,mediaToColissi:1:1"
-        ports:
-        - 8092:9092
     #HOUSTHON
     housthon:
         image: reachhubcorp/housthon:latest
         container_name: housthon
         environment:
-          COLISSITHON_IP: "${colissithon-ip}"
+          COLISSITHON_IP: "${ipcolissithon}"
           COLISSITHON_PORT: 9876
-          HOUSTHON_PORT: 8097
-          KAFKA_IP: "${kafka-ip}"
+          HOUSTHON_PORT: 8090
+          KAFKA_IP: "${ipkafka}"
           KAFKA_PORT: 8092
-          TOPIC_GOOGLETHON : housToGoogle
           TOPIC_TWITTHON: housToTwit
           TOPIC_TRAVELTHON: housToTravel
+          TOPIC_GOOGLETHON: housToGoogle
           TOPIC_COMPARATHON: housToCompara
           PATH_TWEET: /app/samples/tweets
           PATH_PICTURES: /app/samples/pictures
         ports:
-        - "8097:8097"
+        - "8090:8090"
     #COLISSITHON
     colissithon:
         image: reachhubcorp/colissithon:latest
@@ -41,9 +25,9 @@ services:
         ports:
         - "9876:9876"
         environment:
-          INSIGHT_IP: "${insight-ip}"
+          INSIGHT_IP: "${ipinsight}"
           INSIGHT_PORT: 8080
-          KAFKA_IP: "${kafka-ip}"
+          KAFKA_IP: "${ipkafka}"
           KAFKA_PORT: 8092
           COLISSITHON_PORT: 9876
           FROM_TRAVELTHON: locToColissi
@@ -55,9 +39,9 @@ services:
         image: reachhubcorp/travelthon:latest
         container_name: travelthon
         environment:
-          KAFKA_IP: "${kafka-ip}"
+          KAFKA_IP: "${ipkafka}"
           KAFKA_PORT: 8092
-          GEOTROUVETHON_IP: "${geotrouvethon-ip}"
+          GEOTROUVETHON_IP: "${ipgeotrouvethon}"
           GEOTROUVETHON_PORT: 9966
           TOPIC_IN: housToTravel
           TOPIC_OUT: locToColissi
@@ -67,7 +51,7 @@ services:
         image: reachhubcorp/twitthon:latest
         container_name: twitthon
         environment:
-          KAFKA_IP: "${kafka-ip}"
+          KAFKA_IP: "${ipkafka}"
           KAFKA_PORT: 8092
           TOPIC_IN: housToTwit
           TOPICTWEET_OUT: tweetToColissi
@@ -142,7 +126,9 @@ services:
           ELASTICSEARCH_CLUSTERNAME: insight
     #COMPARATHON
     comparathon:
-        image: reachhubcorp/twitthon:latest
+        image: reachhubcorp/comparathon:latest
+        ports:
+        - "9123:9123"
         container_name: comparathon
         environment:
           PICTURES_NUMBER_TO_DOWNLOAD: 25
@@ -151,5 +137,5 @@ services:
           TOPIC_TO_FILL_PICTURES : ggimgToColissi
           TOPIC_TO_CONSUME : housToCompara
           TOPIC_TO_FILL_URLS : urlToScrapy
-          KAFKA_IP : "${kafka-ip}"
+          KAFKA_IP : "${ipkafka}"
           KAFKA_PORT : 8092
