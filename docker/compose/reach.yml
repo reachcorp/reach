@@ -33,6 +33,7 @@ services:
           FROM_TRAVELTHON: locToColissi
           FROM_COMPARATHON: ggimgToColissi
           FROM_TWEETHON: tweetToColissi
+          FROM_CROUSTIBATCH: mediaToColissi
           DEBUG_LEVEL: INFO
     #TRAVELTHON
     travelthon:
@@ -133,7 +134,7 @@ services:
         - "9123:9123"
         container_name: comparathon
         environment:
-          PICTURES_NUMBER_TO_DOWNLOAD: 25
+          PICTURES_NUMBER_TO_DOWNLOAD: 80
           DEBUG_LEVEL : INFO
           TOLERANCE : 0.6
           TOPIC_TO_FILL_PICTURES : ggimgToColissi
