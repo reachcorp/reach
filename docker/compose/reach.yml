@@ -141,3 +141,17 @@ services:
           TOPIC_TO_FILL_URLS : urlToScrapy
           KAFKA_IP : "${ipkafka}"
           KAFKA_PORT : 8092
+    #GOOGLETHON
+    googlethon:
+        image: reachhubcorp/googlethon:latest
+        container_name: googlethon
+        ports:
+        - "2223:2223"
+        environment:
+          KAFKA_IP: "${ipkafka}"
+          KAFKA_PORT: 8092
+          NUMBER_RESULT: 10
+          STANDARD: Vrai
+          TOPIC_IN: housToGoogle
+          TOPIC_OUT_SCRAPY: urlToScrapy
+          DEBUG: INFO
