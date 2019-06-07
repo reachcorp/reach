@@ -156,3 +156,14 @@ services:
           TOPIC_IN: housToGoogle
           TOPIC_OUT_SCRAPY: urlToScrapy
           DEBUG: INFO
+    #SCRAPYTHON
+    scrapython:
+        image: reachhubcorp/scrapython:latest
+        container_name: scrapython
+        environment:
+          KAFKA_IP: "${ipkafka}"
+          KAFKA_PORT: 8092
+          COMPLEXITY: 2
+          TOPIC_IN: urlToScrapy
+          TOPIC_OUT: textToNER
+          DEBUG_LEVEL: INFO
