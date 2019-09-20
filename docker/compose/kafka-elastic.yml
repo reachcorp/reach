@@ -5,7 +5,9 @@ services:
         image: wurstmeister/zookeeper:latest
         container_name: zookeeper
         ports:
-        - 2181:2181
+            - 2181:2181
+        networks:
+            - insight
     kafka: 
         image: wurstmeister/kafka:latest
         container_name: kafka
@@ -15,6 +17,9 @@ services:
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
             KAFKA_CREATE_TOPICS: "housToGoogle:1:1,housToTwit:1:1,housToTravel:1:1,housToCompara:1:1,urlToScrapy:1:1,googleToTwit:1:1,textToNER:1:1,tweetToColissi:1:1,tweetToCrousti:1:1,ggimgToColissi:1:1,locToColissi:1:1,bioToColissi:1:1,orgaToColissi:1:1,mediaToColissi:1:1,scrapyToCompara:1:1,comparaToColissi:1:1"
         ports:
+            - 8092:9092
+        networks:
+            - insight
     #INDEX
     kibana:
         image: docker.elastic.co/kibana/kibana-oss:6.4.2
