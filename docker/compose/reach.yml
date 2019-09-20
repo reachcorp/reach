@@ -33,7 +33,7 @@ services:
           FROM_TRAVELTHON: locToColissi
           FROM_COMPARATHON: ggimgToColissi
           FROM_TWEETHON: tweetToColissi
-          FROM_CROUSTIBATCH: mediaToColissi
+          FROM_CROUSTIBATCH: tweetToCrousti
           DEBUG_LEVEL: INFO
     #TRAVELTHON
     travelthon:
@@ -163,7 +163,7 @@ services:
         environment:
           KAFKA_IP: "${ipkafka}"
           KAFKA_PORT: 8092
-          COMPLEXITY: 2
+          COMPLEXITY: 1
           TOPIC_IN: urlToScrapy
           TOPIC_OUT: textToNER
           DEBUG_LEVEL: INFO
