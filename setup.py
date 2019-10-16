@@ -31,17 +31,17 @@ def dl_module_from_github(module_name, repo_url="."):
 
 ### GET ALL MODULES FROM GITHUB
 # start with 'reach' ...
-dl_module_from_github("reach")
+dl_module_from_github("reach", "https://github.com/reachcorp/reach.git")
 # ... then others
 dl_module_from_github("housthon", "https://github.com/reachcorp/housthon.git")
 dl_module_from_github("comparathon", "https://github.com/reachcorp/comparathon.git")
 dl_module_from_github("scrapython", "https://github.com/reachcorp/scrapython.git")
-dl_module_from_github("twitthon", "https://github.com/reachcorp/twitthon.git")
-dl_module_from_github("nerdetecthon", "https://github.com/reachcorp/nerdetecthon.git")
+# dl_module_from_github("twitthon", "https://github.com/reachcorp/twitthon.git")
+# dl_module_from_github("nerdetecthon", "https://github.com/reachcorp/nerdetecthon.git")
 dl_module_from_github("colissithon", "https://github.com/reachcorp/colissithon.git")
 dl_module_from_github("googlethon", "https://github.com/reachcorp/googlethon.git")
-dl_module_from_github("geotrouvethon", "https://github.com/reachcorp/geotrouvethon.git")
-dl_module_from_github("travelthon", "https://github.com/reachcorp/travelthon.git")
+# dl_module_from_github("geotrouvethon", "https://github.com/reachcorp/geotrouvethon.git")
+# dl_module_from_github("travelthon", "https://github.com/reachcorp/travelthon.git")
 
 os.system("source docker/compose/.env")
 
