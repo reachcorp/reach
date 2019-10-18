@@ -28,6 +28,7 @@ stashed
 *.html
 
 !project/*
+!mock/*
 
 ######################
 # Intellij

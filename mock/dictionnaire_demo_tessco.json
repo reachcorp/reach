@@ -1,0 +1,104 @@
+{
+  "name": "dictionnaire_tessco",
+  "theme": [
+    {
+      "name": "TER",
+      "motclef": [
+        {
+          "clef": "bombes",
+          "pond": "64"
+        },
+        {
+          "clef": "explosion",
+          "pond": "50"
+        },
+        {
+          "clef": "arme",
+          "pond": "56"
+        },
+        {
+          "clef": "attentat",
+          "pond": "75"
+        },
+        {
+          "clef": "Syrie",
+          "pond": "74"
+        }
+
+      ]
+    },
+    {
+      "name": "ESP",
+      "motclef": [
+        {
+          "clef": "NSA",
+          "pond": "54"
+        },
+        {
+          "clef": "cybercriminel",
+          "pond": "48"
+        },
+        {
+          "clef": "Chine",
+          "pond": "45"
+        },
+        {
+          "clef": "CIA",
+          "pond": "32"
+        }
+      ]
+    },
+    {
+      "name": "SUB",
+      "motclef": [
+        {
+          "clef": "anarchie",
+          "pond": "45"
+        },
+        {
+          "clef": "altercation",
+          "pond": "43"
+        },
+        {
+          "clef": "Anonymous",
+          "pond": "50"
+        }
+      ]
+    },
+    {
+      "name": "SAB",
+      "motclef": [
+        {
+          "clef": "ferroviaire",
+          "pond": "41"
+        },
+        {
+          "clef": "vandalisme",
+          "pond": "65"
+        }
+      ]
+    },
+    {
+      "name": "CRO",
+      "motclef": [
+        {
+          "clef": "incarcération",
+          "pond": "58"
+        },
+        {
+          "clef": "criminel",
+          "pond": "67"
+        },
+        {
+          "clef": "meurtre",
+          "pond": "86"
+        },
+        {
+          "clef": "prison",
+          "pond": "72"
+        }
+      ]
+    }
+
+  ]
+}

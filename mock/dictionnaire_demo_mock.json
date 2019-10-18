@@ -1,0 +1,99 @@
+{
+  "name": "dictionnaire_mock",
+  "theme": [
+    {
+      "name": "TER",
+      "motclef": [
+        {
+          "clef": "sport",
+          "pond": "5"
+        },
+        {
+          "clef": "rugby",
+          "pond": "7"
+        },
+        {
+          "clef": "tennis",
+          "pond": "4"
+        },
+        {
+          "clef": "Boxe",
+          "pond": "12"
+        }
+      ]
+    },
+    {
+      "name": "ESP",
+      "motclef": [
+        {
+          "clef": "Emploi",
+          "pond": "4"
+        },
+        {
+          "clef": "https://fr.linkedin.com/",
+          "pond": "5"
+        },
+        {
+          "clef": "Expérience",
+          "pond": "6"
+        },
+        {
+          "clef": "formation",
+          "pond": "4"
+        }
+      ]
+    },
+    {
+      "name": "SUB",
+      "motclef": [
+        {
+          "clef": "https://fr.wikipedia.org/",
+          "pond": "20"
+        },
+        {
+          "clef": "brexit",
+          "pond": "15"
+        },
+        {
+          "clef": "élections",
+          "pond": "10"
+        }
+      ]
+    },
+    {
+      "name": "SAB",
+      "motclef": [
+        {
+          "clef": "vin",
+          "pond": "7"
+        },
+        {
+          "clef": "Salade",
+          "pond": "5"
+        },
+        {
+          "clef": "pain",
+          "pond": "4"
+        }
+      ]
+    },
+    {
+      "name": "CRO",
+      "motclef": [
+        {
+          "clef": "rock",
+          "pond": "6"
+        },
+        {
+          "clef": "rap",
+          "pond": "7"
+        },
+        {
+          "clef": "jazz",
+          "pond": "3"
+        }
+      ]
+    }
+
+  ]
+}
