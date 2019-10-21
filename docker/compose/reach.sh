@@ -30,12 +30,14 @@ echo "stopping reach if running"
 docker-compose -f reach.yml down
 echo "installing reach .. "
 #create directory /files OR execute preparation scripts BELOW, before build
+docker-compose -f kafka-elastic.yml up -d
 docker-compose -f reach.yml -p reach up -d --build
 ;;
 
 run)
 
 echo "starting reach .. "
+docker-compose -f kafka-elastic.yml up -d
 docker-compose -f reach.yml -p reach up -d
 ;;
 
@@ -43,5 +45,6 @@ stop)
 
 echo "stopping reach .. "
 docker-compose -f reach.yml -p reach down
+docker-compose -f kafka-elastic.yml down
 ;;
 esac
