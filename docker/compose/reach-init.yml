@@ -1,0 +1,25 @@
+version: '3'
+services:
+  selenium-firefox:
+    restart: always
+    image: selenium/standalone-firefox
+    volumes:
+        - /dev/shm:/dev/shm
+    ports:
+        - 4444:4444
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    container_name: zookeeper
+    ports:
+        - 2181:2181
+  kafka: 
+    image: wurstmeister/kafka:latest
+    container_name: kafka
+    environment:
+        KAFKA_ADVERTISED_HOST_NAME: "${ipkafka}"
+        KAFKA_ADVERTISED_PORT: 8092
+        KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+        KAFKA_CREATE_TOPICS: "housToGoogle:1:1,housToTwit:1:1,housToCompara:1:1,urlToScrapy:1:1,ggimgToColissi:1:1,locToColissi:1:1,bioToColissi:1:1,orgaToColissi:1:1,mediaToColissi:1:1,scrapyToCompara:1:1,comparaToColissi:1:1"
+    ports:
+        - 8092:9092
+
