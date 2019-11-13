@@ -32,13 +32,6 @@ services:
       PATH_PICTURES: /app/samples/pictures
     ports:
       - "8090:8090"
-  selenium-firefox: #TODO à lancer avant googlethon
-    restart: always
-    image: selenium/standalone-firefox
-    volumes:
-      - /dev/shm:/dev/shm
-    ports:
-      - "4444:4444"
   googlethon:
     image: reachhubcorp/googlethon:latest
     container_name: googlethon
@@ -85,21 +78,4 @@ services:
       DICO_PATH: "${dicopath}"
       DEBUG_LEVEL: INFO
       ES_IP: "${esip}"
-  #INDEX
-  kibana:
-    image: docker.elastic.co/kibana/kibana-oss:6.4.2
-    container_name: kibana
-    ports:
-      - "5601:5601"
-    environment:
-      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
-  insight-elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.4.2
-    container_name: elasticsearch
-    environment:
-      - network.host=0.0.0.0
-      - discovery.type=single-node
-      - cluster.name=insight
-    ports:
-      - 9200:9200
-      - 9300:9300
+
